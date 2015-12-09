@@ -18,7 +18,8 @@ class Digit extends React.Component {
         };
     }
     componentWillReceiveProps (props){
-        setTimeout(() => {
+        this.reinit && clearTimeout(this.reinit);
+        this.reinit = setTimeout(() => {
             this.setState({
                 previousValue: this.state.currentValue,
                 frame: 0
